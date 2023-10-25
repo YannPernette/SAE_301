@@ -62,7 +62,7 @@ import { RouterLink } from 'vue-router';
             </div>
 
             <div class="flex flex-row items-center justify-end text-blanc text-lg">
-                <Panier class="w-16 h-fit p-3 mr-1" />
+                <RouterLink to="panier"><Panier class="w-16 h-fit p-3 mr-1" /></RouterLink>
                 <RouterLink class="flex items-center" to="/connexion">
                     <User class="w-16 h-fit p-3" />
                     <p class="mr-6">{{ currentUser.name }}</p>

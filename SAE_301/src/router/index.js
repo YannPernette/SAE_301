@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import PersonnalisationView from '@/views/PersonnalisationView.vue';
 import ConnexionView from '@/views/ConnexionView.vue';
 import InscriptionView from '@/views/InscriptionView.vue';
+import PanierView from '@/views/PanierView.vue';
 
 
 // Import pocketbase
@@ -18,9 +19,7 @@ const router = createRouter({
     { path: '/personnalisation',         name: 'PersonnalisationView',          component: PersonnalisationView },
     { path: '/connexion',        name: 'ConnexionView',         component: ConnexionView },
     { path: '/inscription',       name: 'InscriptionView',        component: InscriptionView },
-    // { path: '/composant',     name: 'ComponentView',      component: ComponentView },
-    // { path: '/pocketbase01',  name: 'PocketBase01View',   component: PocketBase01View },
-    // { path: '/pocketbase02',  name: 'PocketBase02View',   component: PocketBase02View },
+    { path: '/panier',     name: 'PanierView',      component: PanierView },
   ]
 })
 
