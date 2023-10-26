@@ -1,11 +1,11 @@
 <script setup lang="ts">
 
-import FooterPage from '@/components/FooterPage.vue'
-import HeaderPage from '@/components/HeaderPage.vue'
+import FooterPage from '../components/FooterPage.vue'
+import HeaderPage from '../components/HeaderPage.vue'
 
-import Artisanat from '@/components/icons/Artisanat.vue';
-import Durabilite from '@/components/icons/Durabilite.vue';
-import France from '@/components/icons/France.vue';
+import Artisanat from '../components/icons/Artisanat.vue';
+import Durabilite from '../components/icons/Durabilite.vue';
+import France from '../components/icons/France.vue';
 
 </script>
 

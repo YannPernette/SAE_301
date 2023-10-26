@@ -4,6 +4,7 @@ import PersonnalisationView from '@/views/PersonnalisationView.vue';
 import ConnexionView from '@/views/ConnexionView.vue';
 import InscriptionView from '@/views/InscriptionView.vue';
 import PanierView from '@/views/PanierView.vue';
+import ModelesView from '@/views/ModelesView.vue';
 
 
 // Import pocketbase
@@ -20,6 +21,7 @@ const router = createRouter({
     { path: '/connexion',        name: 'ConnexionView',         component: ConnexionView },
     { path: '/inscription',       name: 'InscriptionView',        component: InscriptionView },
     { path: '/panier',     name: 'PanierView',      component: PanierView },
+    { path: '/modeles',     name: 'ModelesView',      component: ModelesView },
   ]
 })
 
