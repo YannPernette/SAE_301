@@ -8,8 +8,8 @@ import PocketBase from 'pocketbase'
 import HeaderPage from '../components/HeaderPage.vue';
 import FooterPage from '../components/FooterPage.vue';
 // Objet pocketBase
-// const pb = new PocketBase("http://127.0.0.1:8090/");
-const pb = new PocketBase("https://tavue.yann-pernette.fr/");
+const pb = new PocketBase("http://127.0.0.1:8090/");
+// const pb = new PocketBase("https://tavue.yann-pernette.fr/");
 
 // Liste des lunettes
 let listeLunettes = ref()
@@ -35,25 +35,16 @@ const refresh = async () => {
     listeLunettes.value = await pb.collection('Lunette').getFullList(
         // définir un filtre qui fait en sorte qu'il n'y a que les lunettes de l'utilisateur dont l'id est relationUser
         { filter: `relationUser="${pb.authStore.model?.id}"` }
-        
+
     )
     nombreLunettes.value = listeLunettes.value.length
 }
 
-// const update = async (item) => {
-//     let result = await pb.collection('film').update(item.id, {
-//         titre: item.titre,
-//         annee: item.annee
-//     })
-//     console.log("result update", result)
-//     refresh()
-// }
-
-// const del = async (item) => {
-//     let result = await pb.collection('film').delete(item.id)
-//     console.log("result delete", result)
-//     refresh()
-// }
+const delLunettes = async (item) => {
+    let result = await pb.collection('Lunette').delete(item.id)
+    console.log("result delete", result)
+    refresh()
+}
 
 </script>
 
@@ -70,8 +61,8 @@ const refresh = async () => {
         <div class="col-span-3">
             <table>
 
-                <thead>
-                    <tr class="flex mb-6 text-[#8C8C8C] uppercase font-rubik text-xl">
+                <thead class="">
+                    <tr class="flex mb-6 text-[#8C8C8C] uppercase font-rubik text-xl border-b-2 border-bleu-ciel pb-2">
                         <th class="font-medium mr-36">Produit</th>
                         <th class="font-medium mr-10">Prix</th>
                         <th class="font-medium mr-10">Matériau</th>
@@ -89,9 +80,24 @@ const refresh = async () => {
                         <td class="mr-10">{{ item.cadre }}</td>
                         <td class="mr-24">{{ item.branches }}</td>
                         <td>{{ item.verres }}</td>
+
+                        <td>
+                            <div class="text-center">
+                                <button type="button" @click="delLunettes(item)">
+                                    Supprimer
+                                </button>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
+
+            <div class="mt-10 grid grid-cols-5">
+                <div class="py-2 text-center border-2 border-bleu-ciel rounded-sm">
+                    <h4 class="text-xl">Articles : {{ nombreLunettes }}</h4>
+                </div>
+            </div>
+
         </div>
 
         <div class="col-start-4">
@@ -111,7 +117,7 @@ const refresh = async () => {
 
                 <div class="mt-8 flex justify-between">
                     <h5>Total</h5>
-                    <p class="font-semibold">{{ nombreLunettes * 139 + 10}} €</p>
+                    <p class="font-semibold">{{ nombreLunettes * 139 + 10 }} €</p>
                 </div>
             </div>
 
@@ -123,11 +129,6 @@ const refresh = async () => {
         </div>
 
     </div>
-
-
-    <!-- <pre>
-      {{ listeLunettes }}
-    </pre> -->
 
     <FooterPage />
 </template>
