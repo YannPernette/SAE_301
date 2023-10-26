@@ -17,7 +17,7 @@ import { ref, onMounted } from 'vue';
 import PocketBase from 'pocketbase'
 
 import { useRouter } from 'vue-router';
-  const router = useRouter()
+const router = useRouter()
 
 // Objet pocketBase
 // const pb = new PocketBase("http://127.0.0.1:8090/");
@@ -71,6 +71,20 @@ const connect = async () => {
     }
 }
 
+const connectGoogle = async () => {
+    try {
+        const authData = await pb.collection("users").authWithOAuth2({ provider: "google" });
+        if (pb.authStore.isValid) {
+            refresh()
+        }
+    } catch (error) {
+        console.log("erreur de connexion : ", error.message)
+        alert("L'authentification a échoué, veuillez réessayer")
+        user.value = ""
+        psw.value = ""
+    }
+}
+
 const deconnect = () => {
     // Suppression utilisateur connecté
     pb.authStore.clear()
@@ -79,7 +93,7 @@ const deconnect = () => {
 }
 
 const goBack = () => {
-  window.history.back()
+    window.history.back()
 }
 </script>
 
@@ -153,7 +167,7 @@ const goBack = () => {
                     connecté en tant que {{ currentUser.name }}</h1>
 
                 <button class="justify-center items-center" type="button" @click.prevent="deconnect()">
-                    <Logout class="ml-24 w-12 h-fit m-4 p-3 bg-bleu-ciel rounded-sm" />
+                    <Logout class="ml-32 w-12 h-fit m-4 p-3 bg-bleu-ciel rounded-sm" />
                 </button>
             </div>
 

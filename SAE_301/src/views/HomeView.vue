@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import User from '../components/icons/User.vue';
+import Etoile from '../components/icons/Etoile.vue';
 
 import FooterPage from '../components/FooterPage.vue'
 import HeaderPage from '../components/HeaderPage.vue'
+import MapOSM from '../components/MapOSM.vue'
 
 </script>
 
@@ -107,7 +110,85 @@ import HeaderPage from '../components/HeaderPage.vue'
         </div>
     </div>
 
-    <h3 class="text-center ml-0">Alors convaincu ?</h3>
+    <MapOSM />
+
+    <div class="grid grid-cols-3 mt-14">
+
+        <div class="flex flex-col bg-bleu-foncé rounded-sm text-blanc py-4 px-10 m-12">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <User class="w-10 mr-3" />
+                    <p class="text-lg">Sophie M.</p>
+                </div>
+
+                <div class="flex">
+                    <Etoile class="w-8" />
+                    <Etoile class="w-8" />
+                    <Etoile class="w-8" />
+                    <Etoile class="w-8" />
+                    <Etoile class="w-8" />
+                </div>
+
+            </div>
+
+            <div>
+                <p>“J'ai acheté les lunettes 'Sublime Simplicité' et je suis absolument conquise. Leur design minimaliste
+                    est tout simplement magnifique, et la qualité de fabrication est incroyable. Je ne peux pas m'empêcher
+                    de les porter tous les jours. Bravo pour cette création exceptionnelle !”</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col bg-bleu-foncé rounded-sm text-blanc py-4 px-10 m-12">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <User class="w-10 mr-3" />
+                    <p class="text-lg">Julien L.</p>
+                </div>
+
+                <div class="flex">
+                    <Etoile class="w-8" />
+                    <Etoile class="w-8" />
+                    <Etoile class="w-8" />
+                    <Etoile class="w-8" />
+                    <Etoile class="w-8" />
+                </div>
+
+            </div>
+
+            <div>
+                <p>“Les lunettes personnalisées sont élégantes et légères. La commande a été rapide, et je les porte avec
+                    fierté. Seul petit bémol, j'aurais aimé plus de choix de couleurs, mais dans l'ensemble, je suis
+                    satisfait de mon achat.”</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col bg-bleu-foncé rounded-sm text-blanc py-4 px-10 m-12">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <User class="w-10 mr-3" />
+                    <p class="text-lg">Camille B.</p>
+                </div>
+
+                <div class="flex">
+                    <Etoile class="w-8" />
+                    <Etoile class="w-8" />
+                    <Etoile class="w-8" />
+                    <Etoile class="w-8" />
+                    <Etoile class="w-8" />
+                </div>
+
+            </div>
+
+            <div>
+                <p>J'ai cherché des lunettes avec une touche de sophistication, et 'Pure Perfection' a coché toutes les
+                    cases. L'élégance et la qualité de fabrication sont exceptionnelles. Je reçois des compliments à chaque
+                    fois que je les porte. Je suis ravie de mon choix !</p>
+            </div>
+        </div>
+
+    </div>
+
+    <h3 class="text-center ml-0 mt-14">Alors convaincu ?</h3>
 
     <div class="flex flex-row justify-center my-20">
         <div class="flex px-7 py-3 bg-blanc shadow-style-bouton-1 border-2 border-bleu-foncé">
