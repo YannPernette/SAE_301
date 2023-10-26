@@ -8,7 +8,8 @@ import PocketBase from 'pocketbase'
 import HeaderPage from '../components/HeaderPage.vue';
 import FooterPage from '../components/FooterPage.vue';
 // Objet pocketBase
-const pb = new PocketBase("http://127.0.0.1:8090");
+// const pb = new PocketBase("http://127.0.0.1:8090/");
+const pb = new PocketBase("https://tavue.yann-pernette.fr/");
 
 // Liste des lunettes
 let listeLunettes = ref()

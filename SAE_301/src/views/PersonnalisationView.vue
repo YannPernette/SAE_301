@@ -10,7 +10,8 @@ import { ref, onMounted } from 'vue'
 // Import pocketbase
 import PocketBase from 'pocketbase'
 // Objet pocketBase
-const pb = new PocketBase("http://127.0.0.1:8090");
+// const pb = new PocketBase("http://127.0.0.1:8090/");
+const pb = new PocketBase("https://tavue.yann-pernette.fr/");
 
 var materiau = ref(0)
 var solaire = ref(false)
