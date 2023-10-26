@@ -1,7 +1,6 @@
 <script setup>
 // Import éléments de vue
 import { ref, onMounted } from 'vue'
-import { currentUser } from '../views/ConnexionView.vue';
 
 // Import pocketbase
 import PocketBase from 'pocketbase'

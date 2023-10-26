@@ -6,6 +6,7 @@ export let currentUser = ref()
 
 <script setup>
 
+import Google from '@/components/icons/Google.vue';
 import Back from '@/components/icons/Back.vue';
 import Logo_Blanc from '@/components/icons/Logo_Blanc.vue';
 import Logout from '@/components/icons/Logout.vue';
@@ -115,8 +116,8 @@ const goBack = () => {
 
         <div v-if="isConnected == false" class="text-center">
 
-            <button @click="goBack()">
-                <Back class="w-14 ml-3" />
+            <button @click="goBack()" class="flex ml-3">
+                <Back class="w-14" />
             </button>
 
             <h1 class="mt-28 mb-12 text-xl uppercase">Se connecter</h1>
@@ -146,8 +147,9 @@ const goBack = () => {
 
                 <div class="grid grid-cols-5 mb-4">
                     <button
-                        class="col-start-2 col-span-3 mx-20 py-3 bg-[#F9F9F9] text-[#474747] font-medium border-2 border-[#C5C5C5] rounded-sm shadow-style-bouton-1"
+                        class="flex justify-center items-center gap-3 col-start-2 col-span-3 mx-20 bg-[#F9F9F9] text-[#474747] font-medium border-2 border-[#C5C5C5] rounded-sm shadow-style-bouton-1"
                         type="button" @click.prevent="connectGoogle">
+                        <Google class="w-12" />
                         Se connecter avec Google
                     </button>
                 </div>
@@ -166,8 +168,9 @@ const goBack = () => {
                 <h1 class="justify-center text-center mt-0 mb-0 text-lg uppercase">Vous êtes maintenant
                     connecté en tant que {{ currentUser.name }}</h1>
 
-                <button class="justify-center items-center" type="button" @click.prevent="deconnect()">
+                <button class="flex items-center" type="button" @click.prevent="deconnect()">
                     <Logout class="ml-32 w-12 h-fit m-4 p-3 bg-bleu-ciel rounded-sm" />
+                    <p class="text-xl">Se déconnecter</p>
                 </button>
             </div>
 

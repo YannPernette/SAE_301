@@ -2,6 +2,7 @@
 
 import Back from '@/components/icons/Back.vue';
 import Logo_Noir from '@/components/icons/Logo_Noir.vue';
+import Google from '@/components/icons/Google.vue';
 
 // Import éléments de vue
 import { ref, onMounted } from 'vue';
@@ -66,8 +67,8 @@ const goBack = () => {
                 <Logo_Noir class="absolute w-24 h-24 left-2" />
             </RouterLink>
 
-            <button @click="goBack()">
-                <Back class="w-14 ml-44" />
+            <button @click="goBack()" class="flex ml-44">
+                <Back class="w-14" />
             </button>
 
             <h1 class="mt-2 mb-8 text-xl uppercase">S'inscrire</h1>
@@ -106,8 +107,9 @@ const goBack = () => {
 
                 <div class="grid grid-cols-5 mb-4">
                     <button
-                        class="col-start-2 col-span-3 mx-44 py-3 bg-[#F9F9F9] text-[#474747] font-medium border-2 border-[#C5C5C5] rounded-sm shadow-style-bouton-1"
+                        class="flex justify-center items-center gap-3 col-start-2 col-span-3 mx-44 bg-[#F9F9F9] text-[#474747] font-medium border-2 border-[#C5C5C5] rounded-sm shadow-style-bouton-1"
                         type="button" @click.prevent="connectGoogle">
+                        <Google class="w-12" />
                         S'inscrire avec Google
                     </button>
                 </div>
