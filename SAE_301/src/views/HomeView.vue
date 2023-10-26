@@ -5,6 +5,7 @@ import Etoile from '../components/icons/Etoile.vue';
 import FooterPage from '../components/FooterPage.vue'
 import HeaderPage from '../components/HeaderPage.vue'
 import MapOSM from '../components/MapOSM.vue'
+import { RouterLink } from 'vue-router';
 
 </script>
 
@@ -22,7 +23,7 @@ import MapOSM from '../components/MapOSM.vue'
 
         <div class="flex flex-row ml-5 mt-[-120px]">
             <div class="absolute flex px-7 py-3 bg-bleu-foncé shadow-style-bouton-1">
-                <RouterLink class="font-normal text-blanc uppercase w-44 text-center" to="/">Explorer notre collection
+                <RouterLink class="font-normal text-blanc uppercase w-44 text-center" to="/modeles">Explorer notre collection
                 </RouterLink>
             </div>
             <div class="absolute flex ml-72 px-7 py-3 bg-blanc shadow-style-bouton-1">
@@ -82,11 +83,21 @@ import MapOSM from '../components/MapOSM.vue'
         </div>
     </div>
 
-    <div class="grid grid-cols-5 mb-28">
-        <div>
+    <div class="grid grid-cols-5 mb-28 items-center">
+
+        <div class="col-start-2 flex flex-col bg-bleu-ciel">
+            <RouterLink to="/personnalisation">
+                <img src="../assets/img/lunette_perso_preview.webp" alt="Illustration section 'Personnalisation'">
+                <div class="text-center">
+                    <button class="uppercase font-rubik font-medium text-blanc bg-presque-noir px-10 py-1 mt-5 text-sm">Personnaliser</button>
+                    <p class="uppercase font-rubik font-semibold text-noir mt-5 mb-5">Votre monture, votre style</p>
+                </div>
+
+            </RouterLink>
 
         </div>
-        <div class="col-start-3 col-span-2 text-sm">
+
+        <div class="col-start-3 col-span-2 text-sm mx-28">
             <p>Nous comprenons que chaque personne est unique, et c'est pourquoi nous offrons des options de
                 personnalisation sur mesure pour vos lunettes. Choisissez parmi une large gamme de couleurs, pour créer une
                 paire de lunettes qui reflète parfaitement votre style et votre personnalité. Faites de chaque détail une
@@ -192,13 +203,14 @@ import MapOSM from '../components/MapOSM.vue'
 
     <div class="flex flex-row justify-center my-20">
         <div class="flex px-7 py-3 bg-blanc shadow-style-bouton-1 border-2 border-bleu-foncé">
-            <RouterLink class="font-normal text-l text-bleu-foncé uppercase w-44 text-center" to="/">Découvrir notre gamme
+            <RouterLink class="font-normal text-l text-bleu-foncé uppercase w-44 text-center" to="/modeles">Découvrir notre gamme
             </RouterLink>
         </div>
         <div class="flex ml-20 px-7 py-3 bg-bleu-foncé shadow-style-bouton-1">
-            <RouterLink class="font-normal text-l text-blanc uppercase w-44 text-center" to="/">Personnaliser mes lunettes
+            <RouterLink class="font-normal text-l text-blanc uppercase w-44 text-center" to="/personnalisation">Personnaliser mes lunettes
             </RouterLink>
         </div>
     </div>
 
-<FooterPage /></template>
+    <FooterPage />
+</template>
