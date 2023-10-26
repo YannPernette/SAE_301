@@ -45,7 +45,6 @@ const delLunettes = async (item) => {
     console.log("result delete", result)
     refresh()
 }
-
 </script>
 
 
@@ -82,7 +81,7 @@ const delLunettes = async (item) => {
                         <td>{{ item.verres }}</td>
 
                         <td>
-                            <div class="text-center">
+                            <div class="ml-12 text-center bg-[#AB0000] text-blanc px-4 py-2 rounded-sm text-xs">
                                 <button type="button" @click="delLunettes(item)">
                                     Supprimer
                                 </button>

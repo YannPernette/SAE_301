@@ -3,16 +3,11 @@
 import FooterPage from '../components/FooterPage.vue'
 import HeaderPage from '../components/HeaderPage.vue'
 
-import Artisanat from '../components/icons/Artisanat.vue';
-import Durabilite from '../components/icons/Durabilite.vue';
-import France from '../components/icons/France.vue';
-
 </script>
 
 
 
 <template>
-
     <HeaderPage />
 
     <div class="relative">
@@ -24,10 +19,12 @@ import France from '../components/icons/France.vue';
 
         <div class="flex flex-row ml-5 mt-[-120px]">
             <div class="absolute flex px-7 py-3 bg-bleu-foncé shadow-style-bouton-1">
-                <RouterLink class="font-normal text-blanc uppercase w-44 text-center" to="/">Explorer notre collection</RouterLink>
+                <RouterLink class="font-normal text-blanc uppercase w-44 text-center" to="/">Explorer notre collection
+                </RouterLink>
             </div>
             <div class="absolute flex ml-72 px-7 py-3 bg-blanc shadow-style-bouton-1">
-                <RouterLink class="font-normal text-bleu-foncé uppercase w-44 text-center" to="/personnalisation">Personnaliser ma monture</RouterLink>
+                <RouterLink class="font-normal text-bleu-foncé uppercase w-44 text-center" to="/personnalisation">
+                    Personnaliser ma monture</RouterLink>
             </div>
         </div>
 
@@ -62,7 +59,8 @@ import France from '../components/icons/France.vue';
 
     <div class="mx-24 grid grid-cols-3 mb-28">
         <div class="col-span-2 text-sm">
-            <p>Chez TaVue, nous croyons en l'union de l'élégance et de la simplicité, en créant des lunettes qui incarnent
+            <p>Chez <span class="font-semibold">TaVue</span>, nous croyons en l'union de l'élégance et de la simplicité, en
+                créant des lunettes qui incarnent
                 l'essence du raffinement à la française. Notre histoire débute au cœur des ateliers d'artisans de la
                 lunetterie en France, où le savoir-faire traditionnel se marie à une vision contemporaine. Chaque paire de
                 lunettes que nous créons est le fruit d'une passion dévouée pour l'artisanat, d'un souci méticuleux du
@@ -96,15 +94,15 @@ import France from '../components/icons/France.vue';
 
     <div class="grid grid-cols-5">
         <div class="col-start-2 flex flex-col items-center">
-            <Artisanat class="w-36" />
+            <img class="w-32" src="../assets/img/valeurs/artisanat.webp" alt="Icône Artisanat">
             <h4 class="uppercase text-xl">Artisanat</h4>
         </div>
         <div class="col-start-3 flex flex-col items-center">
-            <Durabilite class="w-36" />
+            <img class="w-32" src="../assets/img/valeurs/durabilite.webp" alt="Icône Durabilité">
             <h4 class="uppercase text-xl">Durabilité</h4>
         </div>
         <div class="flex flex-col items-center">
-            <France class="w-36" />
+            <img class="w-32" src="../assets/img/valeurs/france.webp" alt="Icône France">
             <h4 class="uppercase text-xl">Fabrication Française</h4>
         </div>
     </div>
@@ -113,13 +111,13 @@ import France from '../components/icons/France.vue';
 
     <div class="flex flex-row justify-center my-20">
         <div class="flex px-7 py-3 bg-blanc shadow-style-bouton-1 border-2 border-bleu-foncé">
-            <RouterLink class="font-normal text-l text-bleu-foncé uppercase w-44 text-center" to="/">Découvrir notre gamme</RouterLink>
+            <RouterLink class="font-normal text-l text-bleu-foncé uppercase w-44 text-center" to="/">Découvrir notre gamme
+            </RouterLink>
         </div>
         <div class="flex ml-20 px-7 py-3 bg-bleu-foncé shadow-style-bouton-1">
-            <RouterLink class="font-normal text-l text-blanc uppercase w-44 text-center" to="/">Personnaliser mes lunettes</RouterLink>
+            <RouterLink class="font-normal text-l text-blanc uppercase w-44 text-center" to="/">Personnaliser mes lunettes
+            </RouterLink>
         </div>
     </div>
 
-    <FooterPage />
-
-</template>
+<FooterPage /></template>

@@ -3,6 +3,9 @@
 import HeaderPage from '../components/HeaderPage.vue'
 import FooterPage from '../components/FooterPage.vue'
 
+import { useRouter } from 'vue-router';
+const router = useRouter()
+
 import Lunettes from '../components/icons/Lunettes.vue'
 
 import { ref, onMounted } from 'vue'
@@ -32,6 +35,7 @@ const styleLunettes = async () => {
             relationUser: pb.authStore.model.id,
         })
         console.log("lunettes crées : ", authData)
+        router.push({ name: "PanierView" })
 
     } catch (error) {
         console.log("erreur d'enregistrement des lunettes' : ", error.message)
@@ -60,8 +64,7 @@ const styleLunettes = async () => {
 
             <div class="grid grid-cols-5 mb-4 items-center">
                 <p class="col-start-2 justify-self-center font-rubik text-4xl font-medium">139 €</p>
-                <button
-                    class="col-start-3 col-span-2 py-3 bg-bleu-foncé text-blanc rounded-full shadow-style-bouton-1"
+                <button class="col-start-3 col-span-2 py-3 bg-bleu-foncé text-blanc rounded-full shadow-style-bouton-1"
                     type="button" @click.prevent="styleLunettes()">
                     Ajouter au Panier
                 </button>
