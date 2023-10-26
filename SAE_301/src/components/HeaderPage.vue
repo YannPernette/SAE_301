@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 
 import Logo_Blanc from './icons/Logo_Blanc.vue';
 import Panier from './icons/Panier.vue';

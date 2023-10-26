@@ -1,6 +1,7 @@
 <script setup>
 // Import éléments de vue
 import { ref, onMounted } from 'vue'
+import { currentUser } from '../views/ConnexionView.vue';
 
 // Import pocketbase
 import PocketBase from 'pocketbase'
@@ -8,8 +9,6 @@ import HeaderPage from '../components/HeaderPage.vue';
 import FooterPage from '../components/FooterPage.vue';
 // Objet pocketBase
 const pb = new PocketBase("http://127.0.0.1:8090");
-
-let currentUser = pb.authStore.model
 
 // Liste des lunettes
 let listeLunettes = ref()
@@ -34,7 +33,7 @@ onMounted(async () => {
 const refresh = async () => {
     listeLunettes.value = await pb.collection('Lunette').getFullList(
         // définir un filtre qui fait en sorte qu'il n'y a que les lunettes de l'utilisateur dont l'id est relationUser
-        { relationUser: currentUser.id }
+        { filter: `relationUser="${pb.authStore.model?.id}"` }
         
     )
     nombreLunettes.value = listeLunettes.value.length
