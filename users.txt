@@ -1,0 +1,96 @@
+<?php 
+
+    function thememonsite_setup() {
+        add_theme_support('post-thumbnails');
+        add_theme_support('title-tag');
+        // ajout du support pour rendre le code valide en HTML 5
+        add_theme_support( 
+            'html5', 
+            array( 
+              'comment-list', 
+              'comment-form', 
+              'search-form', 
+              'gallery', 
+              'caption',
+              'style',
+              'script'
+            ) );
+        // Ajout du support pour les menus
+        register_nav_menus( 
+            array(
+            'main' => 'Menu Principal',
+            'footer' => 'Menu footer'
+            ) );
+    }
+    add_action('after_setup_theme', 'thememonsite_setup');
+    
+    function themeSAEsite_script() {
+        // Ajout du fichier style.css
+        wp_enqueue_style( 'style', get_stylesheet_uri() );
+        // Ajout du fichier main.js
+        wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true );
+        // Styles Tailwind CSS
+        wp_enqueue_style( 'tailwind_output', get_template_directory_uri() . '/dist/output.css' );
+      }
+      add_action( 'wp_enqueue_scripts', 'themeSAEsite_script' );
+
+
+
+//       function init_my_custom() {
+//         register_post_type(
+//        'recette',
+//        array(
+//        'label' => 'recettes',
+//        'labels' => array(
+//        'name' => 'Recettes',
+//        'singular_name' => 'Recette',
+//        'all_items' => 'Toutes les recettes',
+//        'add_new_item' => 'Ajouter une recette',
+//        'edit_item' => 'Éditer la recette',
+//        'new_item' => 'Nouvelle recette',
+//        'view_item' => 'Voir la recette',
+//        'search_items' => 'Rechercher parmi les recettes',
+//        'not_found' => 'Pas de recette trouvée',
+//        'not_found_in_trash'=> 'Pas de recette dans la corbeille'
+//        ),
+//        'public' => true,
+//        'capability_type' => 'post',
+//        'supports' => array(
+//        'title',
+//        'editor',
+//        'thumbnail'
+//        ),
+//        'has_archive' => true,
+//        'menu_icon'   => 'dashicons-book',
+//        )
+//     );
+
+//     register_post_type(
+//       'aliment',
+//       array(
+//       'label' => 'aliments',
+//       'labels' => array(
+//       'name' => 'Aliments',
+//       'singular_name' => 'Aliments',
+//       'all_items' => 'Tous les aliments',
+//       'add_new_item' => 'Ajouter un aliment',
+//       'edit_item' => "Éditer l'aliment",
+//       'new_item' => 'Nouvel aliment',
+//       'view_item' => "Voir l'aliment",
+//       'search_items' => 'Rechercher parmi les aliments',
+//       'not_found' => "Pas d'aliment trouvé",
+//       'not_found_in_trash'=> "Pas d'aliment dans la corbeille"
+//       ),
+//       'public' => true,
+//       'capability_type' => 'post',
+//       'supports' => array(
+//       'title',
+//       'editor',
+//       'thumbnail'
+//       ),
+//       'has_archive' => true,
+//       'menu_icon'   => 'dashicons-carrot',
+//       )
+//    );
+//     }
+// add_action('init', 'init_my_custom');

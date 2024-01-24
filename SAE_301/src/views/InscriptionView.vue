@@ -10,8 +10,8 @@ import { ref, onMounted } from 'vue';
 // Import pocketbase
 import PocketBase from 'pocketbase'
 // Objet pocketBase
-// const pb = new PocketBase("http://127.0.0.1:8090/");
-const pb = new PocketBase("https://tavue.yann-pernette.fr/");
+const pb = new PocketBase(import.meta.env.VITE_URL_POCKETBASE);
+// const pb = new PocketBase("https://tavue.yann-pernette.fr/");
 
 import { useRouter } from 'vue-router';
 const router = useRouter()

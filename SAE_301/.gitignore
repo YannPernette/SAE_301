@@ -26,3 +26,9 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+/pocketbase/pb_data
+/pocketbase/CHANGELOG.md
+/pocketbase/LICENSE.md
+/pocketbase/pocketbase.exe
+/.env.production
+/pocketbase/pb_public
